@@ -25,11 +25,13 @@ jobs:
     steps:
     - name: checkout code
       uses: actions/checkout@v2
-    - name: actions/setup-node@v1
-      uses: actions/setup-node@v1   
+    - name: actions/setup-node@v2
+      uses: actions/setup-node@v2   
       with:
         node: 16.14
-    - run: npm install
-    - run: npm run build
+    - name: install yarn 
+      uses: npm install yarn     
+    - run: yarn install
+    - run: yarn build
 
       
