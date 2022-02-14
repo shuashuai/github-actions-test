@@ -1,5 +1,10 @@
 name: First GitHub Actions Demo
-on: [push]
+on: 
+  push:
+    branches:
+      - master
+      - dev
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -15,3 +20,16 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2
+    - name: actions/setup-node@v1
+      uses: actions/setup-node@v1   
+      with:
+        node: 16.14
+    - run: npm install
+    - run: npm run build
+
+      
