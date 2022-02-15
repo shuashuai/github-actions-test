@@ -36,7 +36,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4.2.3
       with:
         branch: gh-pages
-        folder: build
+        folder: ./build
         clean: true
         ssh-key: ${{ secrets.PAGE_ACCESS_TOKEN }}    
 
