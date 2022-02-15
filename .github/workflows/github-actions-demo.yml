@@ -11,7 +11,7 @@ jobs:
     steps:
     # 步骤名称
     - name: checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@master
     - name: actions/setup-node@v2
       uses: actions/setup-node@v2   
       with:
@@ -30,7 +30,7 @@ jobs:
     - name: deploy
       uses: JamesIves/github-pages-deploy-action@v4.2.3
       with:
-        branch: master
+        branch: gh-pages
         folder: build      
   # Deploy:
   #   needs: Build
