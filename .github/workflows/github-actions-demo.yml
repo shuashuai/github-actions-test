@@ -29,10 +29,13 @@ jobs:
     - run: yarn install
     - run: yarn build
   Deploy:
-    - name: depploy
+    needs: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: deploy
       uses: JamesIves/github-pages-deploy-action@v4.2.3
-      width:
-        branch: gh-pages
+      with:
+        branch: master
         folder: build
         clean: true
         clean-exclude: |
