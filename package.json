@@ -17,6 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://shuashuai.github.io/github-actions-test",
   "eslintConfig": {
     "extends": [
       "react-app",

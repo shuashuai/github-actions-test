@@ -35,12 +35,9 @@ jobs:
     - name: deploy
       uses: JamesIves/github-pages-deploy-action@v4.2.3
       with:
-        branch: master
+        branch: gh-pages
         folder: build
         clean: true
-        clean-exclude: |
-          special-file.txt
-          some/*.txt
         ssh-key: ${{ secrets.PAGE_ACCESS_TOKEN }}    
 
       
