@@ -15,7 +15,7 @@ jobs:
     - name: actions/setup-node@v2
       uses: actions/setup-node@v2   
       with:
-        node: 16.14
+        node-version: '16.14'
     - name: yarn cache
       id: yarn-cahce-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -26,20 +26,20 @@ jobs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: | 
           ${{ runner.os }}-yarn-   
-    - run: yarn install
-    - run: yarn build
-  Deploy:
-    needs: Build
-    runs-on: ubuntu-latest
-    steps:
-    - name: checkout code
-      uses: actions/checkout@v2
     - name: deploy
       uses: JamesIves/github-pages-deploy-action@v4.2.3
       with:
         branch: master
         folder: ./build
         clean: true
-        ssh-key: ${{ secrets.PAGE_ACCESS_TOKEN }}    
+        ssh-key: ${{ secrets.PAGE_ACCESS_TOKEN }}        
+    - run: yarn install && yarn build
+  # Deploy:
+  #   needs: Build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: checkout code
+  #     uses: actions/checkout@v2
+     
 
       
