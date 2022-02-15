@@ -31,9 +31,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4.2.3
       with:
         branch: master
-        folder: build
-        clean: true
-        ssh-key: ${{ secrets.PAGE_ACCESS_TOKEN }}       
+        folder: build      
   # Deploy:
   #   needs: Build
   #   runs-on: ubuntu-latest
