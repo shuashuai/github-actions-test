@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          hello little bitch
+          你个小垃圾
         </a>
       </header>
     </div>
