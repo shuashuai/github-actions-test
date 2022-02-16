@@ -40,7 +40,7 @@ jobs:
     steps:
     - name: download build files
       uses: actios/upload-artifact@v2
-      width:
+      with:
         name: build-pages
         path: build
     - name: deploy
